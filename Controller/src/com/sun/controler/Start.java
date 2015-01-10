@@ -24,7 +24,7 @@ public class Start {
 	public void setServerIp(){
 		try {
 			InetAddress serverIp = InetAddress.getLocalHost();
-			CONSTANTS.SERVER_IP = "10.3.1.18";//serverIp.getHostAddress();
+			CONSTANTS.SERVER_IP = serverIp.getHostAddress();
 			System.out.println(CONSTANTS.SERVER_IP);
 		} catch (UnknownHostException e) {
 			// TODO Auto-generated catch block

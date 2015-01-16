@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.WindowManager;
 import android.widget.Button;
 
 
@@ -98,6 +99,7 @@ public class ActivitytwoActivity extends Activity {
 				}
 			};
 			mWebSocketClient.connect();
+			GetDirection direction = new GetDirection(getApplicationContext(), mWebSocketClient);
 		} catch (URISyntaxException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

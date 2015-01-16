@@ -8,7 +8,7 @@
         android:minSdkVersion="8"
         android:targetSdkVersion="19" />
     <uses-permission android:name="android.permission.INTERNET"/>
-
+	<uses-feature android:name="android.hardware.sensor.accelerometer" android:required="true" />
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -17,6 +17,7 @@
         
         <activity
             android:name="com.sun.remotecontrol.ActivityOne"
+            android:screenOrientation="landscape"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,6 +27,7 @@
         </activity>
         <activity
             android:name="com.sun.remotecontrol.ActivitytwoActivity"
+             android:screenOrientation="landscape"
             android:label="@string/title_activity_activitytwo" >
         </activity>
     </application>

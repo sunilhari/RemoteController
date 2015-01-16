@@ -17,7 +17,7 @@ public class ActivityOne extends Activity {
 
 	EditText serverAddress;
 	Button connectBtn;
-	WebClient client = new WebClient();
+	WebClient client;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +25,7 @@ public class ActivityOne extends Activity {
 		setContentView(R.layout.layoutone);
 		serverAddress = (EditText) findViewById(R.id.editText1);
 		connectBtn = (Button) findViewById(R.id.button1);
+		 client = new WebClient(getApplicationContext());
 		 bindListeners();
 	}
 
@@ -39,9 +40,7 @@ public class ActivityOne extends Activity {
 					if (validateIp(value)) {
 						try {
 							CONSTANTS.client = client.connectToServer(value);
-							if (CONSTANTS.client != null) {
-								moveToNavigation();
-							}
+							
 						} catch (URISyntaxException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -64,9 +63,6 @@ public class ActivityOne extends Activity {
 		return true;
 	}
 
-	public void moveToNavigation() {
-		Intent newIntent = new Intent(this, Navigate.class);
-		startActivity(newIntent);
-	}
+	
 
 }
